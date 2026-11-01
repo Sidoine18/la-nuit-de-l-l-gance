@@ -3,8 +3,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { site } from "@/data/site";
-const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "600"], variable: "--f-serif" });
+
+const serif = Cormorant_Garamond({ 
+  subsets: ["latin"], 
+  weight: ["400", "700"], 
+  variable: "--f-serif" 
+});
 const sans = Inter({ subsets: ["latin"], variable: "--f-sans" });
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   alternates: { canonical: "./" },
@@ -12,6 +18,7 @@ export const metadata: Metadata = {
   description: "Site officiel de La Nuit de l'Élégance, gala de prestige organisé par mcEvents au Bénin : éditions, archives et prochaine édition.",
   openGraph: { title: "La Nuit de l'Élégance", description: "Gala de prestige au Bénin, par mcEvents.", locale: "fr_FR", type: "website" },
 };
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${serif.variable} ${sans.variable}`}>
